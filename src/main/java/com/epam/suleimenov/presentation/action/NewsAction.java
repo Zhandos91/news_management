@@ -24,49 +24,71 @@ public class NewsAction extends LookupDispatchAction {
     }
 
 
+    public ActionForward list(ActionMapping mapping, ActionForm form,
+                              HttpServletRequest request, HttpServletResponse response) {
 
+        System.out.println("In news_list action");
+        try (Service service = new Service()) {
+            News news = new News();
+            news.setContent("This content is ");
+            news.setBrief("brieflyy fff");
+            news.setDate("12-12-2003");
+            news.setTitle("title");
+            service.add(news);
 
-        public ActionForward list(ActionMapping mapping, ActionForm form,
-                                 HttpServletRequest request, HttpServletResponse response) {
-
-            System.out.println("In news_list action");
-            try(Service service = new Service()) {
-                News news = new News();
-                news.setContent("This content is ");
-                news.setBrief("brieflyy fff");
-                news.setDate("12-12-2003");
-                news.setTitle("title");
-                service.add(news);
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-
-            return mapping.findForward("success");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
 
-
-
-
-//    void view();
-//    void edit();
-//    void delete();
-//    void cancel();
-//    void save();
-//    void add();
-
-
-    public ActionForward add(ActionMapping mapping, ActionForm form,
-                              HttpServletRequest request, HttpServletResponse response) {
-
-        System.out.println("In add news action");
-
-
         return mapping.findForward("success");
+    }
+
+//
+//    public ActionForward view(ActionMapping mapping, ActionForm form,
+//                              HttpServletRequest request, HttpServletResponse response) {
+//
+//
+//        return mapping.findForward("success");
+//    }
+//
+//
+//    public ActionForward edit(ActionMapping mapping, ActionForm form,
+//                              HttpServletRequest request, HttpServletResponse response) {
+//
+//
+//        return mapping.findForward("success");
+//    }
+//
+//    public ActionForward delete(ActionMapping mapping, ActionForm form,
+//                                HttpServletRequest request, HttpServletResponse response) {
+//
+//
+//        return mapping.findForward("success");
+//    }
+//
+//    public ActionForward cancel(ActionMapping mapping, ActionForm form,
+//                                HttpServletRequest request, HttpServletResponse response) {
+//
+//
+//        return mapping.findForward("success");
+//    }
+//
+//    public ActionForward save(ActionMapping mapping, ActionForm form,
+//                              HttpServletRequest request, HttpServletResponse response) {
+//
+//
+//        return mapping.findForward("success");
+//    }
+//
+//
+    public ActionForward add(ActionMapping mapping, ActionForm form,
+                             HttpServletRequest request, HttpServletResponse response) {
+System.out.println("In add action");
+
+        return mapping.findForward("add-news");
     }
 
 
@@ -75,9 +97,13 @@ public class NewsAction extends LookupDispatchAction {
 
         Map keyMap = new HashMap();
         keyMap.put("news_list", "list");
+        keyMap.put("view_news", "view");
+        keyMap.put("edit_news", "edit");
+        keyMap.put("delete_news", "delete");
+        keyMap.put("cancel_news", "cancel");
+        keyMap.put("save_news", "save");
         keyMap.put("add_news", "add");
-        //keyMap.put("editKey", "edit");
-       // keyMap.put("deleteKey", "delete");
+
         return keyMap;
 
     }

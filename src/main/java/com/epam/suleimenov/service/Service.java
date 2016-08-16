@@ -2,7 +2,7 @@ package com.epam.suleimenov.service;
 
 import com.epam.suleimenov.database.Connector;
 import com.epam.suleimenov.database.NewsDAO;
-import com.epam.suleimenov.database.NewsDAOImpl;
+import com.epam.suleimenov.database.INewsDAO;
 import com.epam.suleimenov.model.News;
 
 import java.sql.Connection;
@@ -21,7 +21,7 @@ public class Service implements AutoCloseable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        newsDAO = new NewsDAOImpl(connection);
+        newsDAO = new INewsDAO(connection);
         }
 
 

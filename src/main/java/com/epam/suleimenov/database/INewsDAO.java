@@ -12,12 +12,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewsDAOImpl implements NewsDAO {
+public class INewsDAO implements NewsDAO {
 
     private Connection connection;
-    private Logger log = LoggerFactory.getLogger(NewsDAOImpl.class);
+    private Logger log = LoggerFactory.getLogger(INewsDAO.class);
 
-    public NewsDAOImpl(Connection connection) {
+    public INewsDAO(Connection connection) {
         this.connection = connection;
     }
 

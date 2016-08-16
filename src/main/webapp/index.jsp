@@ -15,7 +15,7 @@
 <head>
 </head>
 <body>
-
+<%--<logic:redirect action="/news?action=News List"/>--%>
 <tiles:insert definition="success-layout">
     <%--<tiles:put name="title" value="A simple page" />--%>
     <%--<tiles:put name="body" value="/mypage-content.jsp" />--%>

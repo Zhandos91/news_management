@@ -15,10 +15,10 @@
 </head>
 <body>
 Add/Edit a person in the list :
-<html:form action="/news">
-    First Name : <html:text property="content"/>
-    Last Name : <html:text property="brief"/>
-    <html:submit property="action" value="Show News"/>
-</html:form>
+<%--<html:form action="/news">--%>
+    <%--First Name : <html:text property="game"/>--%>
+
+    <%--<html:submit property="action" value="Show News"/>--%>
+<%--</html:form>--%>
 </body>
 </html>

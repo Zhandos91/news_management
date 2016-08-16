@@ -12,15 +12,6 @@ public class NewsForm extends ActionForm {
     private static final long serialVersionUID = -3801647970505428833L;
     private News newsMessage;
     private List<News> newsList;
-    private String game;
-
-    public String getGame() {
-        return game;
-    }
-
-    public void setGame(String game) {
-        this.game = game;
-    }
 
     public News getNewsMessage() {
         return newsMessage;

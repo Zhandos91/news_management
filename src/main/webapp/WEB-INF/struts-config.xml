@@ -12,7 +12,8 @@
         <action name="newsForm" path="/news" type="com.epam.suleimenov.presentation.action.NewsAction"
                 scope="session" parameter="action">
             <forward name="success" path="success-layout" redirect="true" />
-            <forward name="add-news" path="/WEB-INF/jsp/addNews.jsp" />
+            <forward name="add-news" path="add-news" redirect="true" />
+            <forward name="news-list" path="news-list" redirect="true" />
         </action>
 
 

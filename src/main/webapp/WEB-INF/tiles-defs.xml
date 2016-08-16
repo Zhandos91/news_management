@@ -18,4 +18,14 @@
 
     </definition>
 
+    <definition name="add-news" extends="common-news-layout">
+        <put name="body" value="/WEB-INF/jsp/addNews.jsp"/>
+
+    </definition>
+
+    <definition name="news-list" extends="common-news-layout">
+        <put name="body" value="/WEB-INF/jsp/listNews.jsp"/>
+
+    </definition>
+
 </tiles-definitions>

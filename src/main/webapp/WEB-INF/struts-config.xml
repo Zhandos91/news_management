@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="newsForm" type="com.epam.suleimenov.presentation.form.NewsForm"/>
+    </form-beans>
+
+    <action-mappings>
+
+
+        <action name="newsForm" path="/news" type="com.epam.suleimenov.presentation.action.NewsAction"
+                scope="session" parameter="action">
+            <forward name="success" path="success-layout" redirect="true"/>
+        </action>
+
+
+    </action-mappings>
+
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
+    <message-resources parameter="MessageResources"/>
+
+
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+
+
+</struts-config>

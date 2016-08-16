@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+<tiles-definitions>
+
+    <definition name="common-news-layout" template="/WEB-INF/jsp/common_layout.jsp">
+        <put name="title" type="string" value="News Title"/>
+        <put name="header" value="/WEB-INF/jsp/tiles/header/header.jsp" />
+        <put name="footer" value="/WEB-INF/jsp/tiles/footer/footer.jsp" />
+        <put name="menu" value="/WEB-INF/jsp/tiles/menu/menu.jsp"/>
+        <!--<put name="body" value="/WEB-INF/jsp/tiles/body/body.jsp"/>-->
+    </definition>
+
+    <definition name="success-layout" extends="common-news-layout">
+        <put name="body" value="/updateBody.jsp"/>
+
+    </definition>
+
+</tiles-definitions>

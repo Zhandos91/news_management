@@ -30,7 +30,8 @@ public class NewsAction extends LookupDispatchAction {
         try (Service service = new Service()) {
             List<News> list_news = service.getList();
             request.getSession().setAttribute("list_news", list_news);
-
+            NewsForm newsForm = (NewsForm) form;
+            newsForm.setNewsList(list_news);
 
         } catch (SQLException e) {
             e.printStackTrace();

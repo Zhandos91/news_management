@@ -94,21 +94,21 @@ public class NewsAction extends LookupDispatchAction {
 
     public ActionForward edit(ActionMapping mapping, ActionForm form,
                               HttpServletRequest request, HttpServletResponse response) {
-
+        log.debug("Editing News");
 
         return mapping.findForward("success");
     }
 
     public ActionForward delete(ActionMapping mapping, ActionForm form,
                                 HttpServletRequest request, HttpServletResponse response) {
-
+        log.debug("Deleting News");
 
         return mapping.findForward("success");
     }
 
     public ActionForward cancel(ActionMapping mapping, ActionForm form,
                                 HttpServletRequest request, HttpServletResponse response) {
-
+        log.debug("Cancelling News");
 
         return mapping.findForward("success");
     }
@@ -116,6 +116,23 @@ public class NewsAction extends LookupDispatchAction {
     public ActionForward save(ActionMapping mapping, ActionForm form,
                               HttpServletRequest request, HttpServletResponse response) {
 
+        NewsForm newsForm = (NewsForm) form;
+        News newsMessage = new News();
+        newsMessage.setTitle(newsForm.getTitle());
+        newsMessage.setDate(newsForm.getDate());
+        newsMessage.setBrief(newsForm.getBrief());
+        newsMessage.setContent(newsForm.getContent());
+
+        try(Service service = new Service()) {
+            newsMessage = service.add(newsMessage);
+            newsForm.setNewsMessage(newsMessage);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        log.debug("Saving News");
 
         return mapping.findForward("success");
     }
@@ -123,7 +140,7 @@ public class NewsAction extends LookupDispatchAction {
 
     public ActionForward add(ActionMapping mapping, ActionForm form,
                              HttpServletRequest request, HttpServletResponse response) {
-        log.debug("In add action");
+        log.debug("Adding news");
 
         return mapping.findForward("add-news");
     }

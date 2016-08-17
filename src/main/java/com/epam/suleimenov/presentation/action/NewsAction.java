@@ -104,6 +104,16 @@ public class NewsAction extends LookupDispatchAction {
                                 HttpServletRequest request, HttpServletResponse response) {
         log.debug("Deleting News");
 
+//        try(Service service = new Service()) {
+//            NewsForm newsForm = (NewsForm) form;
+//            for(String deleting: newsForm.getChecked()) {
+//                service.remove(Integer.parseInt(deleting));
+//            }
+//            newsForm.setNewsList(service.getList());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
         return mapping.findForward("success");
     }
 

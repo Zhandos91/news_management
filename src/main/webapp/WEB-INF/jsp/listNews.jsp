@@ -32,6 +32,8 @@
         <br/>
         <html:link action="/news.do?action=View News&news_id=${news.getId()}" ><bean:message key="link.view"></bean:message></html:link>
         <html:link action="/news.do?action=Edit News&news_id=${news.getId()}" ><bean:message key="link.edit"></bean:message></html:link>
+        <%--<html:checkbox property="" value=""></html:checkbox>--%>
+        <html:multibox property="checked" value="${news.getId()}"></html:multibox>
     </logic:iterate>
     <%--<a href="/news.do?action=View News&news_id=${news.getId()}">view</a>--%>
 

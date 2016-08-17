@@ -16,6 +16,7 @@ public class NewsForm extends ActionForm {
     private String date;
     private String brief;
     private String content;
+    private String[] checked;
 
     public String getTitle() {
         return title;
@@ -47,6 +48,14 @@ public class NewsForm extends ActionForm {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String[] getChecked() {
+        return checked;
+    }
+
+    public void setChecked(String[] checked) {
+        this.checked = checked;
     }
 
     public News getNewsMessage() {

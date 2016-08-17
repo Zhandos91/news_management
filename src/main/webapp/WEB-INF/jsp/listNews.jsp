@@ -42,7 +42,8 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-md-offset-9"><a href="/news.do?action=News List">view</a></label>
+                <%--<input class="form-control" type="hidden" name="news_id" value=${news.getId()} />--%>
+                <label class="control-label col-md-offset-9"><a href="/news.do?action=View News&news_id=${news.getId()}">view</a></label>
                 <label class="control-label"><a href="/news.do?action=Add News">edit</a></label>
                 <div class="checkbox-inline">
                     <label class="control-label"><input type="checkbox" value=""></label>

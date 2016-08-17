@@ -2,6 +2,7 @@ package com.epam.suleimenov.presentation.action;
 
 
 import com.epam.suleimenov.model.News;
+import com.epam.suleimenov.presentation.form.NewsForm;
 import com.epam.suleimenov.service.Service;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -60,8 +61,34 @@ public class NewsAction extends LookupDispatchAction {
     public ActionForward view(ActionMapping mapping, ActionForm form,
                               HttpServletRequest request, HttpServletResponse response) {
 
+        log.debug("In view action");
 
-        return mapping.findForward("success");
+        String id = request.getParameter("news_id");
+        int news_id;
+        if(id != null) {
+            news_id = Integer.parseInt(id);
+
+            try(Service service = new Service()){
+
+                News news = service.fetchById(news_id);
+                NewsForm newsForm = (NewsForm) form;
+                newsForm.setNewsMessage(news);
+
+                request.getSession().setAttribute("news", news);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+        } else{
+            log.debug("news id is not found");
+            return mapping.findForward("failure");
+        }
+
+
+
+        return mapping.findForward("view-news");
     }
 
 

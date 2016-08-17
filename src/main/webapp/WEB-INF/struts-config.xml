@@ -14,6 +14,7 @@
             <forward name="success" path="success-layout" redirect="true" />
             <forward name="add-news" path="add-news" redirect="true" />
             <forward name="news-list" path="news-list" redirect="true" />
+            <forward name="view-news" path="view-news" redirect="true" />
         </action>
 
 

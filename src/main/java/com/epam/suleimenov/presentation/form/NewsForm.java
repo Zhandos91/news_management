@@ -12,43 +12,52 @@ public class NewsForm extends ActionForm {
     private static final long serialVersionUID = -3801647970505428833L;
     private News newsMessage;
     private List<News> newsList;
-//    private String title;
-//    private String date;
-//    private String brief;
-//    private String content;
+    private String id;
+    private String title;
+    private String date;
+    private String brief;
+    private String content;
     private String[] checked;
 
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public void setTitle(String title) {
-//        this.title = title;
-//    }
-//
-//    public String getDate() {
-//        return date;
-//    }
-//
-//    public void setDate(String date) {
-//        this.date = date;
-//    }
-//
-//    public String getBrief() {
-//        return brief;
-//    }
-//
-//    public void setBrief(String brief) {
-//        this.brief = brief;
-//    }
-//
-//    public String getContent() {
-//        return content;
-//    }
-//
-//    public void setContent(String content) {
-//        this.content = content;
-//    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getBrief() {
+        return brief;
+    }
+
+    public void setBrief(String brief) {
+        this.brief = brief;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     public String[] getChecked() {
         return checked;
@@ -76,6 +85,10 @@ public class NewsForm extends ActionForm {
 
     @Override
     public void reset(ActionMapping mapping, HttpServletRequest request) {
+        this.setTitle(null);
+        this.setDate(null);
+        this.setBrief(null);
+        this.setContent(null);
         if(newsMessage != null) {
             newsMessage.setTitle(null);
             newsMessage.setDate(null);

@@ -42,6 +42,6 @@ public class News extends BaseEntity {
     @Override
     public String toString() {
         return "News{" +
-                "title='" + title;
+                "title='" + title + ", id=" + id + "}";
     }
 }

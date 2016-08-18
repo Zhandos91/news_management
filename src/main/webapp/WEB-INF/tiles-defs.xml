@@ -29,4 +29,8 @@
         <put name="body" value="/WEB-INF/jsp/viewNews.jsp"/>
     </definition>
 
+    <definition name="edit-news" extends="common-news-layout">
+        <put name="body" value="/WEB-INF/jsp/editNews.jsp"/>
+    </definition>
+
 </tiles-definitions>

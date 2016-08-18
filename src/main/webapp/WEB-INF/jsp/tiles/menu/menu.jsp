@@ -29,7 +29,7 @@
         <h4 align="center">News</h4>
         <ul>
             <li><a href="/news.do?action=News List">News List</a></li>
-            <li><a href="/news.do?action=Add News" >Add News</a></li>
+            <li><a href="/addNews.do" >Add News</a></li>
 
 
 

@@ -8,6 +8,7 @@
 
     <action-mappings>
 
+        <action path="/addNews" forward="add-news"></action>
 
         <action name="newsForm" path="/news" type="com.epam.suleimenov.presentation.action.NewsAction"
                 scope="session" parameter="action">
@@ -15,6 +16,7 @@
             <forward name="add-news" path="add-news" redirect="true" />
             <forward name="news-list" path="news-list" redirect="true" />
             <forward name="view-news" path="view-news" redirect="true" />
+            <forward name="edit-news" path="edit-news" redirect="true" />
         </action>
 
 

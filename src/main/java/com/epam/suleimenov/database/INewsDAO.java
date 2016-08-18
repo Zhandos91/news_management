@@ -54,6 +54,7 @@ public class INewsDAO implements NewsDAO {
             preparedStatement.setString(2, news.getDate());
             preparedStatement.setString(3, news.getBrief());
             preparedStatement.setString(4, news.getContent());
+            preparedStatement.setInt(5, news.getId());
             preparedStatement.executeUpdate();
         }catch (SQLException e) {
             e.printStackTrace();

@@ -18,7 +18,7 @@
 <body>
 
 
-<html:form action="/news">
+<html:form action="/news?action=Delete News">
 
     <logic:iterate id="news" property="newsList" name="newsForm">
         <div class="padding-top:130px">
@@ -37,7 +37,7 @@
     </logic:iterate>
     <%--<a href="/news.do?action=View News&news_id=${news.getId()}">view</a>--%>
 
-    <html:submit property="action" value="Delete News">
+    <html:submit onclick="javascript:return confirm('are you sure?');">
         <bean:message key="button.delete"></bean:message>
     </html:submit>
 </html:form>

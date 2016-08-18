@@ -40,7 +40,7 @@
 <div>
 
     <html:link action="/news.do?action=Edit News&news_id=${news.id}" ><button type="button"><bean:message key="button.edit"></bean:message></button></html:link>
-    <html:link action="/news.do?action=Delete News&news_id=${news.id}" ><button type="button"><bean:message key="button.delete"></bean:message></button></html:link>
+    <html:link action="/news.do?action=Delete News&news_id=${news.id}" ><button type="button" onclick="javascript:return confirm('are you sure?');"><bean:message key="button.delete"></bean:message></button></html:link>
 
     <%--<div style="margin-left:150px">--%>
         <%--<html:submit property="action" value="Edit News">--%>

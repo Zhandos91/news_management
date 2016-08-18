@@ -74,8 +74,7 @@ public class NewsAction extends LookupDispatchAction {
                 News news = service.fetchById(news_id);
                 NewsForm newsForm = (NewsForm) form;
                 newsForm.setNewsMessage(news);
-
-                request.getSession().setAttribute("news", news);
+                log.debug("News View {}", news);
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -95,9 +94,28 @@ public class NewsAction extends LookupDispatchAction {
 
     public ActionForward edit(ActionMapping mapping, ActionForm form,
                               HttpServletRequest request, HttpServletResponse response) {
-        log.debug("Editing News");
 
-        return mapping.findForward("success");
+        log.debug("Editing news");
+        String id = request.getParameter("news_id");
+        int news_id;
+        if(id != null) {
+            news_id = Integer.parseInt(id);
+
+            try(Service service = new Service()){
+                News news = service.fetchById(news_id);
+                NewsForm newsForm = (NewsForm) form;
+                newsForm.setNewsMessage(news);
+                log.debug("News Edit {}", news);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else{
+            log.debug("news id is not found");
+            return mapping.findForward("failure");
+        }
+
+        return mapping.findForward("add-news");
     }
 
     public ActionForward delete(ActionMapping mapping, ActionForm form,
@@ -128,22 +146,20 @@ public class NewsAction extends LookupDispatchAction {
                               HttpServletRequest request, HttpServletResponse response) {
 
         NewsForm newsForm = (NewsForm) form;
-        News newsMessage = new News();
-        newsMessage.setTitle(newsForm.getTitle());
-        newsMessage.setDate(newsForm.getDate());
-        newsMessage.setBrief(newsForm.getBrief());
-        newsMessage.setContent(newsForm.getContent());
+        News newsMessage = newsForm.getNewsMessage();
 
-        try(Service service = new Service()) {
-            newsMessage = service.add(newsMessage);
-            newsForm.setNewsMessage(newsMessage);
+        log.debug("Saving News", newsMessage);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try(Service service = new Service()) {
+//            newsMessage = service.add(newsMessage);
+//            newsForm.setNewsMessage(newsMessage);
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 
-        log.debug("Saving News");
+
 
         return mapping.findForward("success");
     }
@@ -152,6 +168,9 @@ public class NewsAction extends LookupDispatchAction {
     public ActionForward add(ActionMapping mapping, ActionForm form,
                              HttpServletRequest request, HttpServletResponse response) {
         log.debug("Adding news");
+
+        NewsForm newsForm =(NewsForm) form;
+        log.debug("newsFrom in add {}", newsForm.getNewsMessage());
 
         return mapping.findForward("add-news");
     }

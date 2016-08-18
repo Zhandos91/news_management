@@ -20,7 +20,7 @@
 
 <html:form action="/news">
 
-    <logic:iterate id="news" name="list_news">
+    <logic:iterate id="news" property="newsList" name="newsForm">
         <div class="padding-top:130px">
             <bean:write name="news" property="title"></bean:write>
             <bean:write name="news" property="date"></bean:write>

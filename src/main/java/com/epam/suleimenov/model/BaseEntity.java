@@ -1,7 +1,7 @@
 package com.epam.suleimenov.model;
 
 public class BaseEntity {
-    private Integer id;
+    protected Integer id;
 
     public Integer getId() {
         return id;
@@ -9,13 +9,6 @@ public class BaseEntity {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "BaseEntity{" +
-                "id=" + id +
-                '}';
     }
 
     @Override

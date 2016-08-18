@@ -38,4 +38,10 @@ public class News extends BaseEntity {
     public void setContent(String content) {
         this.content = content;
     }
+
+    @Override
+    public String toString() {
+        return "News{" +
+                "title='" + title;
+    }
 }

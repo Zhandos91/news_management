@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
 <%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
-<%@ taglib prefix="hmml" uri="http://struts.apache.org/tags-html" %>
+<bean:define id="news" property="newsMessage" name="newsForm"></bean:define>
 <html>
 <head>
     <title><bean:message key="page.add.title"/></title>
@@ -19,22 +19,22 @@
 
 <div>
     <bean:message key="news.title"></bean:message>
-    <html:text property="title"></html:text>
+    <html:text name="news" property="title"></html:text>
 </div>
 
 <div>
     <bean:message key="news.date"></bean:message>
-    <hmml:text property="date"></hmml:text>
+    <html:text name="news" property="date"></html:text>
 </div>
 
 <div>
     <bean:message key="news.brief"></bean:message>
-    <html:textarea property="brief"></html:textarea>
+    <html:textarea name="news" property="brief"></html:textarea>
 </div>
 
 <div>
     <bean:message key="news.content"></bean:message>
-    <html:textarea property="content"></html:textarea>
+    <html:textarea name="news" property="content"></html:textarea>
 </div>
 
 <div style="margin-left:150px">

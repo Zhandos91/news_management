@@ -97,4 +97,16 @@ public class NewsForm extends ActionForm {
         }
         super.reset(mapping, request);
     }
+
+//    @Override
+//    public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
+//
+//        ActionErrors errors = new ActionErrors();
+//
+//        if(getTitle() == null || getTitle().equals("")) {
+//            errors.add("title", new ActionMessage("error.title.missing"));
+//
+//        }
+//        return errors;
+//    }
 }

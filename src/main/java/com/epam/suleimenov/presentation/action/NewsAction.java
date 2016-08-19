@@ -126,28 +126,31 @@ public class NewsAction extends LookupDispatchAction {
         NewsForm newsForm = (NewsForm) form;
         if (newsForm.getChecked() == null) {
             String id = request.getParameter("news_id");
-            log.debug("Deleting single news " + id);
 
-            if(id == null)
+            if (id == null) {
                 log.debug("At least one news must be checked");
-//            try (Service service = new Service()) {
-//                service.remove(Integer.parseInt(id));
-//                newsForm.setNewsList(service.getList());
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
+            } else {
+                log.debug("Deleting single news " + id);
+                try (Service service = new Service()) {
+                    service.remove(Integer.parseInt(id));
+                    newsForm.setNewsList(service.getList());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
         } else {
             log.debug("Deleting multiple news");
 
-//            try (Service service = new Service()) {
-//
-//                for (String deleting : newsForm.getChecked()) {
-//                    service.remove(Integer.parseInt(deleting));
-//                }
-//                newsForm.setNewsList(service.getList());
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
+            try (Service service = new Service()) {
+
+                for (String deleting : newsForm.getChecked()) {
+                    service.remove(Integer.parseInt(deleting));
+                }
+                newsForm.setNewsList(service.getList());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         newsForm.setChecked(null);

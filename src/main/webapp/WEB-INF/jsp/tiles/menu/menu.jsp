@@ -13,28 +13,27 @@
 <%--</body>--%>
 <%--</html>--%>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles"%>
-<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
-<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
-<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles"%>--%>
+<%--<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>--%>
+<%--<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>--%>
+<%--<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>--%>
 
 
 <html>
 <body>
-<div class="menu">
+<div style="background-color: green;margin-top: 50px;position: fixed;width: 19.5%;top:83px">
 
-    <div class="menu_list">
+    <div sty>
         <h4 align="center">News</h4>
+    </div>
+    <div >
         <ul>
             <li><a href="/news.do?action=News List">News List</a></li>
-            <li><a href="/addNews.do" >Add News</a></li>
-
-
-
+            <li><a href="/addNews.do">Add News</a></li>
         </ul>
     </div>
+
 </div>
 <br>
 

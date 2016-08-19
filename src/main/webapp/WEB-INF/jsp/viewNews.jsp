@@ -11,51 +11,44 @@
 <bean:define id="news" property="newsMessage" name="newsForm"></bean:define>
 <html>
 <head>
-
+    <title><bean:message key="page.add.title"/></title>
 </head>
 <body>
 
+<h4>News View</h4>
+
 <%--<html:form action="/news?">--%>
+<table>
+    <tr>
+        <td><bean:message key="news.title"></bean:message></td>
+        <td><bean:write name="news" property="title"></bean:write></td>
+    </tr>
 
-    <div>
-        <bean:message key="news.title"></bean:message>
-        <bean:write name="news" property="title"></bean:write>
-    </div>
+    <tr>
+        <td><bean:message key="news.date"></bean:message></td>
+        <td><bean:write name="news" property="date"></bean:write></td>
+    </tr>
 
-    <div>
-        <bean:message key="news.date"></bean:message>
-        <bean:write name="news" property="date"></bean:write>
-    </div>
+    <tr>
+        <td><bean:message key="news.brief"></bean:message></td>
+        <td><bean:write name="news" property="brief"></bean:write></td>
+    </tr>
 
-    <div>
-        <bean:message key="news.brief"></bean:message>
-        <bean:write name="news" property="brief"></bean:write>
-    </div>
-
-    <div>
-        <bean:message key="news.content"></bean:message>
-        <bean:write name="news" property="content"></bean:write>
-    </div>
-
+    <tr>
+        <td><bean:message key="news.content"></bean:message></td>
+        <td><bean:write name="news" property="content"></bean:write></td>
+    </tr>
+</table>
+<br/>
 <div>
-
-    <html:link action="/news.do?action=Edit News&news_id=${news.id}" ><button type="button"><bean:message key="button.edit"></bean:message></button></html:link>
-    <html:link action="/news.do?action=Delete News&news_id=${news.id}" ><button type="button" onclick="javascript:return confirm('are you sure?');"><bean:message key="button.delete"></bean:message></button></html:link>
-
-    <%--<div style="margin-left:150px">--%>
-        <%--<html:submit property="action" value="Edit News">--%>
-            <%--<bean:message key="button.edit"></bean:message>--%>
-        <%--</html:submit>--%>
-
-        <%--<html:submit property="Delete News">--%>
-            <%--&lt;%&ndash;<bean:message key="button.delete"></bean:message>&ndash;%&gt;--%>
-            <%--helllo--%>
-        <%--</html:submit>--%>
-
-    </div>
-
-
-<%--</html:form>--%>
+    <html:link action="/news.do?action=Edit News&news_id=${news.id}">
+        <button type="button"><bean:message key="button.edit"></bean:message></button>
+    </html:link>
+    <html:link action="/news.do?action=Delete News&news_id=${news.id}">
+        <button type="button" onclick="javascript:return confirm('are you sure?');"><bean:message
+                key="button.delete"></bean:message></button>
+    </html:link>
+</div>
 
 
 </body>

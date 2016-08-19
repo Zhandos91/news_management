@@ -16,68 +16,39 @@
     <title><bean:message key="page.list.title"/></title>
 </head>
 <body>
-
+<h4>News List</h4>
 
 <html:form action="/news?action=Delete News">
 
     <logic:iterate id="news" property="newsList" name="newsForm">
-        <div class="padding-top:130px">
-            <bean:write name="news" property="title"></bean:write>
-            <bean:write name="news" property="date"></bean:write>
+
+        <div style="padding-top:50px; margin-bottom: 50px; border:1px solid; background-color: darkgoldenrod">
+            <label><bean:write name="news" property="title"></bean:write></label>
+            <label style="float: right"><u><bean:write name="news" property="date"></bean:write></u></label>
+            <br/>
+
+            <div style="padding-top:10px;width:80%">
+                <bean:write name="news" property="brief"></bean:write>
+            </div>
+            <br/>
+
+            <div style="float: right;">
+                <html:link action="/news.do?action=View News&news_id=${news.getId()}"><bean:message
+                        key="link.view"></bean:message></html:link>
+                <html:link action="/news.do?action=Edit News&news_id=${news.getId()}"><bean:message
+                        key="link.edit"></bean:message></html:link>
+                <html:multibox property="checked" value="${news.getId()}"></html:multibox>
+            </div>
         </div>
-        <br/>
-        <div class="padding-top:130px">
-            <bean:write name="news" property="brief"></bean:write>
-        </div>
-        <br/>
-        <html:link action="/news.do?action=View News&news_id=${news.getId()}" ><bean:message key="link.view"></bean:message></html:link>
-        <html:link action="/news.do?action=Edit News&news_id=${news.getId()}" ><bean:message key="link.edit"></bean:message></html:link>
-        <%--<html:checkbox property="" value=""></html:checkbox>--%>
-        <html:multibox property="checked" value="${news.getId()}"></html:multibox>
+
     </logic:iterate>
-    <%--<a href="/news.do?action=View News&news_id=${news.getId()}">view</a>--%>
 
-    <html:submit onclick="javascript:return confirm('are you sure?');">
-        <bean:message key="button.delete"></bean:message>
-    </html:submit>
+    <div style="padding-top:20px; float:right">
+        <html:submit onclick="javascript:return confirm('are you sure?');">
+            <bean:message key="button.delete"></bean:message>
+        </html:submit>
+    </div>
 </html:form>
-
-
-<%--<form id="addNewsForm" class="form-horizontal" role="form" action="news" method="post">--%>
-
-<%--<div class="page-header"><h2>List news</h2></div>--%>
-
-<%--<c:forEach items="${sessionScope.list_news}" var="news">--%>
-
-<%--<div class="form-group">--%>
-<%--<label class="control-label">${news.getTitle()}</label>--%>
-<%--<label class="control-label col-md-offset-8">${news.getDate()}</label>--%>
-
-<%--</div>--%>
-
-<%--<div class="form-group">--%>
-<%--<label class="control-label">${news.getBrief()}</label>--%>
-<%--</div>--%>
-
-<%--<div class="form-group">--%>
-<%--&lt;%&ndash;<input class="form-control" type="hidden" name="news_id" value=${news.getId()} />&ndash;%&gt;--%>
-<%--<label class="control-label col-md-offset-9"><a href="/news.do?action=View News&news_id=${news.getId()}">view</a></label>--%>
-<%--<label class="control-label"><a href="/news.do?action=Add News">edit</a></label>--%>
-<%--<div class="checkbox-inline">--%>
-<%--<label class="control-label"><input type="checkbox" value=""></label>--%>
-<%--</div>--%>
-<%--</div>--%>
-
-
-<%--</c:forEach>--%>
-
-<%--<div class="form-group">--%>
-<%--<div class="col-md-offset-9">--%>
-<%--<button type="submit" class="btn btn-primary" name="action" value="Delete News">DELETE</button>--%>
-<%--</div>--%>
-<%--</div>--%>
-
-<%--</form>--%>
 
 
 </body>

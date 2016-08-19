@@ -14,33 +14,36 @@
     <title><bean:message key="page.add.title"/></title>
 </head>
 <body>
-hello
+
+<h4>Edit News</h4>
 
 <html:form action="/news?action=Save News">
 
-
-    <div>
+<table>
+    <tr>
         <html:hidden property="id" value="${news.id}"></html:hidden>
-        <bean:message key="news.title"></bean:message>
-        <html:text property="title" value="${news.title}"></html:text>
-    </div>
+        <td> <bean:message key="news.title"></bean:message></td>
+        <td><html:text size="56" property="title" value="${news.title}"></html:text></td>
+    </tr>
 
-    <div>
-        <bean:message key="news.date"></bean:message>
-        <html:text property="date" value="${news.date}"></html:text>
-    </div>
+    <tr>
+        <td><bean:message key="news.date"></bean:message></td>
+        <td><html:text property="date" value="${news.date}"></html:text></td>
+    </tr>
 
-    <div>
-        <bean:message key="news.brief"></bean:message>
-        <html:textarea property="brief" value="${news.brief}"></html:textarea>
-    </div>
+    <tr>
+        <td><bean:message key="news.brief"></bean:message></td>
+        <td><html:textarea rows="6" cols="80" property="brief" value="${news.brief}"></html:textarea></td>
+    </tr>
 
-    <div>
-        <bean:message key="news.content"></bean:message>
-        <html:textarea property="content" value="${news.content}"></html:textarea>
-    </div>
+    <tr>
+        <td><bean:message key="news.content"></bean:message></td>
+        <td><html:textarea rows="8" cols="80" property="content" value="${news.content}"></html:textarea></td>
+    </tr>
+</table>
 
-    <div>
+
+    <div style="margin-left: 250px; margin-top: 20px">
         <html:submit>
             <bean:message key="button.save"></bean:message>
         </html:submit>

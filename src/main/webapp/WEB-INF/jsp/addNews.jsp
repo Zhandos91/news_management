@@ -15,35 +15,41 @@
 </head>
 <body>
 
+<h4>Add News</h4>
 
 <html:form action="/news?action=Add News">
-<div>
-    <bean:message key="news.title"></bean:message>
-    <html:text property="title"></html:text>
-</div>
 
-<div>
-    <bean:message key="news.date"></bean:message>
-    <html:text property="date"></html:text>
-</div>
+    <table>
+        <tr>
+            <td><bean:message key="news.title"></bean:message></td>
+            <td><html:text size="56" property="title"></html:text></td>
+        </tr>
 
-<div>
-    <bean:message key="news.brief"></bean:message>
-    <html:textarea property="brief"></html:textarea>
-</div>
+        <tr>
+            <td><bean:message key="news.date"></bean:message></td>
+            <td><html:text size="13" property="date"></html:text></td>
+        </tr>
 
-<div>
-    <bean:message key="news.content"></bean:message>
-    <html:textarea property="content"></html:textarea>
-</div>
+        <tr>
+            <td><bean:message key="news.brief"></bean:message></td>
+            <td><html:textarea rows="5" cols="58" property="brief"></html:textarea></td>
+        </tr>
 
-<div>
-    <html:submit>
-        <bean:message key="button.save"></bean:message>
-    </html:submit>
-    <%--<html:link action="/news.do?action=Save News&news_id=${news.id}" ><button type="button"><bean:message key="button.save"></bean:message></button></html:link>--%>
-    <html:link action="/news.do?action=News List" ><button type="button"><bean:message key="button.cancel"></bean:message></button></html:link>
-</div>
+        <tr>
+            <td><bean:message key="news.content"></bean:message></td>
+            <td><html:textarea rows="8" cols="58" property="content"></html:textarea></td>
+        </tr>
+    </table>
+    <br/><br/>
+    <div style="margin-left:210px">
+        <html:submit >
+            <bean:message key="button.save"></bean:message>
+        </html:submit>
+            <%--<html:link action="/news.do?action=Save News&news_id=${news.id}" ><button type="button"><bean:message key="button.save"></bean:message></button></html:link>--%>
+        <html:link action="/news.do?action=News List">
+            <button type="button"><bean:message key="button.cancel"></bean:message></button>
+        </html:link>
+    </div>
 
 </html:form>
 

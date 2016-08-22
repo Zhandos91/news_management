@@ -1,13 +1,13 @@
 package com.epam.suleimenov.presentation.form;
 
 import com.epam.suleimenov.model.News;
-import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.validator.ValidatorForm;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-public class NewsForm extends ActionForm {
+public class NewsForm extends ValidatorForm {
 
     private static final long serialVersionUID = -3801647970505428833L;
     private News newsMessage;

@@ -17,7 +17,11 @@
 
 <h4>Edit News</h4>
 
-<html:form action="/news?action=Save News">
+<div style="color: red">
+    <html:errors></html:errors>
+</div>
+
+<html:form action="/edit?action=Save News">
 
 <table>
     <tr>

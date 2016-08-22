@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC
+        "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+        "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+
+<form-validation>
+    <formset>
+        <form name="newsForm">
+            <field property="title" depends="required,maxlength">
+
+                <msg name="required" key="error.news.title.required" />
+                <msg name="maxlength" key="error.news.title.maxlength" />
+
+                <arg name="maxlength" key="${var:maxlength}" position="0"
+                     resource="false"/>
+
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>100</var-value>
+                </var>
+
+            </field>
+
+
+            <field property="date" depends="required, maxlength, mask">
+
+                <msg name="required" key="error.news.date.required" />
+
+                <msg name="maxlength" key="error.news.date.maxlength" />
+
+                <msg name="mask" key="error.news.date.inputValidation" />
+
+
+                <arg name="maxlength" key="${var:maxlength}" position="0"
+                     resource="false"/>
+
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>10</var-value>
+                </var>
+
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]</var-value>
+                </var>
+
+            </field>
+
+            <field property="brief" depends="required,maxlength">
+
+                <msg name="required" key="error.news.brief.required" />
+                <msg name="maxlength" key="error.news.brief.maxlength" />
+
+                <arg name="maxlength" key="${var:maxlength}" position="0"
+                     resource="false"/>
+
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>500</var-value>
+                </var>
+
+            </field>
+
+            <field property="content" depends="required,maxlength">
+
+                <msg name="required" key="error.news.content.required" />
+                <msg name="maxlength" key="error.news.content.maxlength" />
+
+                <arg name="maxlength" key="${var:maxlength}" position="0"
+                     resource="false"/>
+
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>2048</var-value>
+                </var>
+
+            </field>
+
+        </form>
+    </formset>
+</form-validation>

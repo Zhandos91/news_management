@@ -8,16 +8,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
 <%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
     <title><bean:message key="page.add.title"/></title>
 </head>
 <body>
+<c:set var="today" value="<%=new java.util.Date()%>" />
+<p><fmt:formatDate var="now" value="${today}" pattern="yyyy-MM-dd" /> </p>
 
 <h4>Add News</h4>
+<div style="color: red">
+<html:errors></html:errors>
+</div>
 
-<html:form action="/news?action=Add News">
+<html:form action="/add?action=Add News">
 
     <table>
         <tr>
@@ -27,7 +34,7 @@
 
         <tr>
             <td><bean:message key="news.date"></bean:message></td>
-            <td><html:text size="13" property="date"></html:text></td>
+            <td><html:text size="13" property="date" value="${now}"></html:text></td>
         </tr>
 
         <tr>

@@ -18,6 +18,7 @@
 <body>
 <h4>News List</h4>
 
+
 <html:form action="/news?action=Delete News">
 
     <logic:iterate id="news" property="newsList" name="newsForm">

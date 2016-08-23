@@ -9,7 +9,6 @@ import java.util.List;
 
 public class NewsForm extends ValidatorForm {
 
-    private static final long serialVersionUID = -3801647970505428833L;
     private News newsMessage;
     private List<News> newsList;
     private String id;
@@ -97,16 +96,4 @@ public class NewsForm extends ValidatorForm {
         }
         super.reset(mapping, request);
     }
-
-//    @Override
-//    public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
-//
-//        ActionErrors errors = new ActionErrors();
-//
-//        if(getTitle() == null || getTitle().equals("")) {
-//            errors.add("title", new ActionMessage("error.title.missing"));
-//
-//        }
-//        return errors;
-//    }
 }

@@ -7,10 +7,12 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
+
 <html>
 <head>
 </head>
 <body>
-<div style="padding: 15px;background-color: green" align="center">Copyright &copy; EPAM 2016. All rights reserved</div>
+<div style="padding: 15px;background-color: green" align="center"><bean:message key="main.footer"/> </div>
 </body>
 </html>

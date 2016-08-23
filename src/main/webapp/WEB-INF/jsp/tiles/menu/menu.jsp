@@ -14,10 +14,7 @@
 <%--</html>--%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles"%>--%>
-<%--<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>--%>
-<%--<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>--%>
-<%--<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>--%>
+<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
 
 
 <html>
@@ -25,12 +22,12 @@
 <div style="background-color: green;margin-top: 50px;position: fixed;width: 19.5%;top:83px">
 
     <div sty>
-        <h4 align="center">News</h4>
+        <h4 align="center"><bean:message key="main.menu.header"/></h4>
     </div>
     <div >
         <ul>
-            <li><a href="/news.do?action=News List">News List</a></li>
-            <li><a href="/addNews.do">Add News</a></li>
+            <li><a href="/news.do?action=News List"><bean:message key="main.menu.list1"/></a></li>
+            <li><a href="/addNews.do"><bean:message key="main.menu.list2"/></a></li>
         </ul>
     </div>
 

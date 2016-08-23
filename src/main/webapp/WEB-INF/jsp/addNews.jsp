@@ -13,13 +13,12 @@
 
 <html>
 <head>
-    <title><bean:message key="page.add.title"/></title>
 </head>
 <body>
 <c:set var="today" value="<%=new java.util.Date()%>" />
 <p><fmt:formatDate var="now" value="${today}" pattern="yyyy-MM-dd" /> </p>
 
-<h4>Add News</h4>
+<h4><bean:message key="page.add.title"/></h4>
 <div style="color: red">
 <html:errors></html:errors>
 </div>

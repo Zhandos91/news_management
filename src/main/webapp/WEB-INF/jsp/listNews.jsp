@@ -13,12 +13,11 @@
 
 <html>
 <head>
-    <title><bean:message key="page.list.title"/></title>
 </head>
 <body>
-<h4>News List</h4>
+<h4><bean:message key="page.list.title"/></h4>
 
-
+<div style="color:red">${deleteError}</div>
 <html:form action="/news?action=Delete News">
 
     <logic:iterate id="news" property="newsList" name="newsForm">
@@ -49,6 +48,7 @@
             <bean:message key="button.delete"></bean:message>
         </html:submit>
     </div>
+
 </html:form>
 
 

@@ -27,22 +27,22 @@
     <tr>
         <html:hidden property="id" value="${news.id}"></html:hidden>
         <td> <bean:message key="news.title"></bean:message></td>
-        <td><html:text size="56" property="title" value="${news.title}"></html:text></td>
+        <td><html:text size="56" property="title"></html:text></td>
     </tr>
 
     <tr>
         <td><bean:message key="news.date"></bean:message></td>
-        <td><html:text property="date" value="${news.date}"></html:text></td>
+        <td><html:text property="date"></html:text></td>
     </tr>
 
     <tr>
         <td><bean:message key="news.brief"></bean:message></td>
-        <td><html:textarea rows="6" cols="80" property="brief" value="${news.brief}"></html:textarea></td>
+        <td><html:textarea rows="6" cols="80" property="brief"></html:textarea></td>
     </tr>
 
     <tr>
         <td><bean:message key="news.content"></bean:message></td>
-        <td><html:textarea rows="8" cols="80" property="content" value="${news.content}"></html:textarea></td>
+        <td><html:textarea rows="8" cols="80" property="content"></html:textarea></td>
     </tr>
 </table>
 
@@ -51,7 +51,7 @@
         <html:submit>
             <bean:message key="button.save"></bean:message>
         </html:submit>
-            <%--<html:link action="/news.do?action=Save News&news_id=${news.id}" ><button type="button"><bean:message key="button.save"></bean:message></button></html:link>--%>
+
         <html:link action="/news.do?action=Cancel News" ><button type="button"><bean:message key="button.cancel"></bean:message></button></html:link>
     </div>
 

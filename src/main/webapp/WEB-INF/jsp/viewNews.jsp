@@ -11,11 +11,10 @@
 <bean:define id="news" property="newsMessage" name="newsForm"></bean:define>
 <html>
 <head>
-    <title><bean:message key="page.add.title"/></title>
 </head>
 <body>
 
-<h4>News View</h4>
+<h4><bean:message key="page.view.title"/></h4>
 
 <%--<html:form action="/news?">--%>
 <table>

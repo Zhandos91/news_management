@@ -31,7 +31,7 @@
             <forward name="edit-news" path="edit-news" redirect="true" />
         </action>
         
-        <action name="newsForm" path="/changeLocale" type="com.epam.suleimenov.presentation.action.LocaleAction" scope="session" parameter="action" >
+        <action name="newsForm" path="/changeLocale" type="com.epam.suleimenov.presentation.action.LocaleAction" scope="session" parameter="action" validate="false" >
             <forward name="success" path="news-list" redirect="true" />
         </action>
 

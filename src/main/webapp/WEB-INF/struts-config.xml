@@ -38,8 +38,12 @@
 
     </action-mappings>
 
-    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
+    <!--<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />-->
+
+    <controller processorClass="org.springframework.web.struts.DelegatingTilesRequestProcessor"/>
+
     <message-resources parameter="MessageResources"/>
+
 
 
     <plug-in className="org.apache.struts.tiles.TilesPlugin">
@@ -53,5 +57,12 @@
                       value="/org/apache/struts/validator/validator-rules.xml,
                              /WEB-INF/validation.xml"/>
     </plug-in>
+
+
+        <!-- Spring Struts plugin -->
+        <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+            <set-property property="contextConfigLocation"
+                          value="/WEB-INF/beans.xml" />
+        </plug-in>
 
 </struts-config>

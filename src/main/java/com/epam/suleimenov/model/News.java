@@ -1,6 +1,8 @@
 package com.epam.suleimenov.model;
 
-public class News extends BaseEntity {
+import java.io.Serializable;
+
+public class News extends BaseEntity implements Serializable {
 
     private String title;
     private String date;

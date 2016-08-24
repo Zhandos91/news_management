@@ -17,8 +17,8 @@ public class INewsDAO implements NewsDAO {
     private Connection connection;
     private Logger log = LoggerFactory.getLogger(INewsDAO.class);
 
-    public INewsDAO(Connection connection) {
-        this.connection = connection;
+    public INewsDAO() {
+        connection = ConnectionPool.getConnection();
     }
 
     @Override

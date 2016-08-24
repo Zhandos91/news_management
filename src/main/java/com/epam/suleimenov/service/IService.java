@@ -1,23 +1,16 @@
 package com.epam.suleimenov.service;
 
-import com.epam.suleimenov.database.ConnectionPool;
-import com.epam.suleimenov.database.INewsDAO;
 import com.epam.suleimenov.database.NewsDAO;
 import com.epam.suleimenov.model.News;
 
-import java.sql.Connection;
 import java.util.List;
 
 public class IService implements Service {
 
     private NewsDAO newsDAO;
-    private ConnectionPool connectionPool;
-    private Connection connection;
 
-    public IService() {
-        connectionPool = new ConnectionPool();
-        connection = connectionPool.getConnection();
-        newsDAO = new INewsDAO(connection);
+    public void setNewsDAO(NewsDAO newsDAO) {
+        this.newsDAO = newsDAO;
     }
 
     @Override
